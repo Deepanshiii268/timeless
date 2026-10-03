@@ -1,0 +1,54 @@
+const hourHand = document.getElementById('hourHand');
+const minHand = document.getElementById('minHand');
+const secHand = document.getElementById('secHand');
+const digitalClock = document.getElementById('digitalClock');
+const ampmBadge = document.getElementById('ampmBadge');
+const currentDateEl = document.getElementById('currentDate');
+const currentYearEl = document.getElementById('currentYear');
+
+function updateClock() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    if (hourHand) {
+        const hourDegrees = ((hours % 12) * 30) + (minutes * 0.5);
+        hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+    }
+
+    if (minHand) {
+        const minuteDegrees = (minutes * 6) + (seconds * 0.1);
+        minHand.style.transform = `rotate(${minuteDegrees}deg)`;
+    }
+
+    if (secHand) {
+        secHand.style.transform = `rotate(${seconds * 6}deg)`;
+    }
+
+    if (digitalClock) {
+        const displayHours = hours % 12 || 12;
+        digitalClock.textContent = [displayHours, minutes, seconds]
+            .map((value) => String(value).padStart(2, '0'))
+            .join(':');
+    }
+
+    if (ampmBadge) {
+        ampmBadge.textContent = hours >= 12 ? 'PM' : 'AM';
+    }
+
+    if (currentDateEl) {
+        currentDateEl.textContent = new Intl.DateTimeFormat(undefined, {
+            weekday: 'long',
+            month: 'long',
+            day: 'numeric'
+        }).format(now);
+    }
+
+    if (currentYearEl) {
+        currentYearEl.textContent = String(now.getFullYear());
+    }
+}
+
+updateClock();
+setInterval(updateClock, 1000);
