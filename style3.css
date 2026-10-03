@@ -1,0 +1,547 @@
+/* ==========================================================================
+   CSS Variables & Pinterest Warm Aesthetic Palette
+   ========================================================================== */
+
+:root {
+    --bg-deep: #171a2b;
+    --bg-mid: #1f2436;
+    --panel: rgba(35, 40, 58, 0.82);
+    --panel-strong: #2b3043;
+    --soft-lavender: #c9c0ff;
+    --dusty-rose: #f3b5c7;
+    --pastel-mint: #bfead9;
+    --pastel-peach: #f7d7b7;
+    --soft-blue: #bfd9ff;
+    --soft-white: #f7f4ff;
+    --muted-text: #d9d7ee;
+    --muted-rose: #f0b2d0;
+    --text-main: #f5f0ff;
+    --text-soft: #c9c3ea;
+    --shadow-dark: rgba(10, 12, 20, 0.45);
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --neumorph-outer: 16px 16px 36px rgba(9, 12, 22, 0.45), -16px -16px 36px rgba(64, 71, 97, 0.36);
+    --clock-shadow: 12px 14px 28px rgba(8, 10, 18, 0.5), -12px -14px 28px rgba(68, 73, 97, 0.4);
+}
+
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, rgba(192, 185, 255, 0.22), transparent 32%), radial-gradient(circle at bottom right, rgba(191, 234, 217, 0.18), transparent 28%), linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 52%, #141b2d 100%);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    padding: 2.5rem 1rem;
+}
+
+
+/* ==========================================================================
+   Floating Aesthetic Ambient Elements
+   ========================================================================== */
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.blob-1 {
+    width: 320px;
+    height: 320px;
+    background-color: rgba(243, 181, 199, 0.18);
+    top: -60px;
+    left: -80px;
+    animation: floatSlow 12s ease-in-out infinite alternate;
+}
+
+.blob-2 {
+    width: 380px;
+    height: 380px;
+    background-color: rgba(191, 234, 217, 0.16);
+    bottom: -90px;
+    right: -90px;
+    animation: floatSlow 14s ease-in-out infinite alternate-reverse;
+}
+
+.blob-3 {
+    width: 240px;
+    height: 240px;
+    background-color: rgba(201, 192, 255, 0.15);
+    top: 45%;
+    left: 65%;
+    animation: floatSlow 16s ease-in-out infinite alternate;
+}
+
+.star {
+    position: absolute;
+    color: var(--pastel-peach);
+    font-size: 1rem;
+    opacity: 0.7;
+    pointer-events: none;
+    animation: pulseStar 5s ease-in-out infinite;
+}
+
+.star-1 {
+    top: 14%;
+    left: 22%;
+    animation-delay: 0s;
+}
+
+.star-2 {
+    top: 78%;
+    left: 18%;
+    animation-delay: 1.5s;
+    font-size: 1.4rem;
+}
+
+.star-3 {
+    top: 22%;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+@keyframes floatSlow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(25px, 20px) scale(1.08);
+    }
+}
+
+@keyframes pulseStar {
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 0.75;
+        transform: scale(1.15);
+    }
+}
+
+
+/* ==========================================================================
+   Main Layout Container
+   ========================================================================== */
+
+.page-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+
+/* ==========================================================================
+   Header Styling
+   ========================================================================== */
+
+.aesthetic-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eyebrow-text {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    color: var(--pastel-mint);
+    margin-bottom: 0.35rem;
+}
+
+.brand-title {
+    font-family: var(--font-serif);
+    font-size: 2.75rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--soft-white);
+    line-height: 1;
+}
+
+.aesthetic-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.6rem 0;
+    width: 180px;
+}
+
+.aesthetic-divider .line {
+    flex: 1;
+    height: 1px;
+    background-color: var(--dusty-rose);
+    opacity: 0.8;
+}
+
+.aesthetic-divider .diamond {
+    font-size: 0.6rem;
+    color: var(--dusty-rose);
+}
+
+.subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    letter-spacing: 0.03em;
+}
+
+
+/* ==========================================================================
+   Neumorphic / Glassmorphic Main Card
+   ========================================================================== */
+
+.clock-card {
+    width: 100%;
+    background: rgba(33, 38, 54, 0.8);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 36px;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--neumorph-outer);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clock-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 18px 20px 42px rgba(8, 10, 18, 0.52), -18px -20px 42px rgba(75, 82, 108, 0.28);
+}
+
+
+/* ==========================================================================
+   Analog Clock
+   ========================================================================== */
+
+.analog-clock {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #2d3550 0%, #242b3f 28%, #1f2438 100%);
+    position: relative;
+    box-shadow: var(--clock-shadow);
+    border: 4px solid rgba(201, 192, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Subtle outer ring accent */
+
+.analog-clock::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 1px dashed rgba(191, 234, 217, 0.45);
+    pointer-events: none;
+}
+
+
+/* Inner decorative ring */
+
+.analog-clock::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+
+
+/* Hour markers */
+
+.hour-marker {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: calc(50% - 1px);
+    top: 0;
+    pointer-events: none;
+}
+
+.hour-marker::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 2px;
+    height: 7px;
+    background-color: var(--text-soft);
+    border-radius: 2px;
+}
+
+
+/* Prominent cardinal hour markers (12, 3, 6, 9) */
+
+.marker-12::before,
+.marker-3::before,
+.marker-6::before,
+.marker-9::before {
+    width: 3px;
+    height: 11px;
+    left: -0.5px;
+    background-color: var(--soft-white);
+}
+
+.marker-1 {
+    transform: rotate(30deg);
+}
+
+.marker-2 {
+    transform: rotate(60deg);
+}
+
+.marker-3 {
+    transform: rotate(90deg);
+}
+
+.marker-4 {
+    transform: rotate(120deg);
+}
+
+.marker-5 {
+    transform: rotate(150deg);
+}
+
+.marker-6 {
+    transform: rotate(180deg);
+}
+
+.marker-7 {
+    transform: rotate(210deg);
+}
+
+.marker-8 {
+    transform: rotate(240deg);
+}
+
+.marker-9 {
+    transform: rotate(270deg);
+}
+
+.marker-10 {
+    transform: rotate(300deg);
+}
+
+.marker-11 {
+    transform: rotate(330deg);
+}
+
+.marker-12 {
+    transform: rotate(0deg);
+}
+
+
+/* Clock Hands */
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 6px;
+    z-index: 2;
+    transition: transform 0.05s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+
+.hour-hand {
+    width: 4px;
+    height: 56px;
+    margin-left: -2px;
+    background-color: var(--soft-white);
+}
+
+.min-hand {
+    width: 2.5px;
+    height: 78px;
+    margin-left: -1.25px;
+    background-color: var(--pastel-mint);
+}
+
+.sec-hand {
+    width: 1.5px;
+    height: 94px;
+    margin-left: -0.75px;
+    background-color: var(--dusty-rose);
+    z-index: 3;
+}
+
+
+/* Secondary counterbalance on the second hand */
+
+.sec-hand::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: -1.5px;
+    width: 4px;
+    height: 16px;
+    background-color: var(--dusty-rose);
+    border-radius: 3px;
+}
+
+
+/* Center Pin */
+
+.center-cap {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--pastel-peach);
+    border: 2px solid var(--soft-white);
+    z-index: 4;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================================================
+   Digital Clock
+   ========================================================================== */
+
+.digital-section {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.digital-clock {
+    font-family: var(--font-sans);
+    font-size: 2.75rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--soft-white);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+}
+
+.ampm-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--pastel-peach);
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   Date Display
+   ========================================================================== */
+
+.date-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding-top: 0.25rem;
+    border-top: 1px solid rgba(74, 63, 53, 0.08);
+    width: 85%;
+}
+
+.day-date {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--soft-white);
+    letter-spacing: 0.02em;
+}
+
+.year-pill {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.6rem;
+    background-color: rgba(191, 234, 217, 0.18);
+    color: var(--soft-white);
+    border-radius: 20px;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.aesthetic-footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    letter-spacing: 0.04em;
+}
+
+.aesthetic-footer .heart {
+    color: var(--dusty-rose);
+    font-size: 0.85rem;
+    padding: 0 0.15rem;
+}
+
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 480px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+    .brand-title {
+        font-size: 2.2rem;
+    }
+    .subtitle {
+        font-size: 0.85rem;
+    }
+    .clock-card {
+        padding: 2rem 1.25rem;
+        gap: 1.5rem;
+        border-radius: 28px;
+    }
+    .analog-clock {
+        width: 205px;
+        height: 205px;
+    }
+    .hour-hand {
+        height: 46px;
+    }
+    .min-hand {
+        height: 64px;
+    }
+    .sec-hand {
+        height: 76px;
+    }
+    .digital-clock {
+        font-size: 2.15rem;
+    }
+    .day-date {
+        font-size: 1.05rem;
+    }
+}
