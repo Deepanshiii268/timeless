@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless — Aesthetic Clock</title>
+
+    <!-- Google Fonts: Italianno-style serif for titles & clean sans for numbers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+
+    <!-- Subtle ambient aesthetic background shapes -->
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+    <div class="blob blob-3" aria-hidden="true"></div>
+
+    <!-- Decorative sparkling stars -->
+    <div class="star star-1" aria-hidden="true">✦</div>
+    <div class="star star-2" aria-hidden="true">✧</div>
+    <div class="star star-3" aria-hidden="true">✦</div>
+
+    <div class="page-wrapper">
+
+        <!-- Header -->
+        <header class="aesthetic-header">
+            <p class="eyebrow-text">EST. MOMENTS</p>
+            <h1 class="brand-title">TIMELESS</h1>
+            <div class="aesthetic-divider">
+                <span class="line"></span>
+                <span class="diamond">◇</span>
+                <span class="line"></span>
+            </div>
+            <p class="subtitle">A little moment of time, beautifully designed.</p>
+        </header>
+
+        <!-- Main Clock Card -->
+        <main class="clock-card" aria-label="Clock Dashboard">
+
+            <!-- Analog Clock Display -->
+            <section class="analog-clock" aria-label="Analog Clock Representation">
+                <!-- 12 Hour Dial Markers -->
+                <div class="hour-marker marker-1"></div>
+                <div class="hour-marker marker-2"></div>
+                <div class="hour-marker marker-3"></div>
+                <div class="hour-marker marker-4"></div>
+                <div class="hour-marker marker-5"></div>
+                <div class="hour-marker marker-6"></div>
+                <div class="hour-marker marker-7"></div>
+                <div class="hour-marker marker-8"></div>
+                <div class="hour-marker marker-9"></div>
+                <div class="hour-marker marker-10"></div>
+                <div class="hour-marker marker-11"></div>
+                <div class="hour-marker marker-12"></div>
+
+                <!-- Clock Hands -->
+                <div class="hand hour-hand" id="hourHand"></div>
+                <div class="hand min-hand" id="minHand"></div>
+                <div class="hand sec-hand" id="secHand"></div>
+
+                <!-- Center Pin -->
+                <div class="center-cap"></div>
+            </section>
+
+            <!-- Digital Clock Display -->
+            <section class="digital-section" aria-live="polite">
+                <div class="digital-clock" id="digitalClock">00:00:00</div>
+                <span class="ampm-badge" id="ampmBadge">AM</span>
+            </section>
+
+            <!-- Dynamic Date Display -->
+            <section class="date-section">
+                <p class="day-date" id="currentDate">Loading date...</p>
+                <span class="year-pill" id="currentYear">----</span>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="aesthetic-footer">
+            <p>Designed with <span class="heart">♡</span> and a little bit of time.</p>
+        </footer>
+
+    </div>
+
+    <script src="script3.js"></script>
+</body>
+
+</html>
